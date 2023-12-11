@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="_PRVW__3617f72da7c73110292612d541584184">3e177f2d47c73110bd8cf164336d430c</compiled_topic>
+        <design_definition>{"type":"FlowTopic","triggers":[{"type":"Trigger","name":"0faba4aaffb44c4797f8b02938d907bc","triggerType":"request","applicability":{"type":"Applicability","mode":"script","value":"true"},"id":"0faba4aaffb44c4797f8b02938d907bc"}],"goals":[{"name":"primary","trigger_id":"0faba4aaffb44c4797f8b02938d907bc","nodes":[{"type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","mode":"string","value":""},"id":"972110b2590b4356b3a031d4f7cb9012","name":"Start"},{"type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","mode":"string","value":""},"id":"166984db1c57489dab720923fe6859ee","name":"End"},{"type":"TextOutputPrompt","value":[{"type":"String","mode":"script","value":"(function execute() {\n    return vaSystem.getClosingMessage();\n})()\n"}],"id":"8d50a162291448b890a6f6f3e02596a4","name":"Closing Message","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"(function execute() {\n    return gs.nil(vaContext.suppress_end_message) || vaContext.suppress_end_message != \"true\";\n})()"},"secure":false},{"type":"ScriptedAction","script":"(function execute() {\n    vaSystem.endConversation();\n})()\n","id":"7d750541738445b797f5ca4d6554fdc8","name":"Close Conversation","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"(function execute() {\n     if (vaVars.didConnectToLiveAgent) {\n         return false;\n     }\n})()\n"}}],"edges":[{"type":"Edge","source_node_id":"8d50a162291448b890a6f6f3e02596a4","target_node_id":"7d750541738445b797f5ca4d6554fdc8","id":"415b1517f7814431b30e3c9584cd25ce"},{"type":"Edge","source_node_id":"7d750541738445b797f5ca4d6554fdc8","target_node_id":"166984db1c57489dab720923fe6859ee","id":"a80f24c74c7d4db08cb2255349a25f67"},{"type":"Edge","source_node_id":"972110b2590b4356b3a031d4f7cb9012","target_node_id":"8d50a162291448b890a6f6f3e02596a4","id":"b6c897c2939c4efaafd75c3f1da9a693"}],"id":"primary"}],"script_variables":[],"glide_variables":[{"type":"Reference","table":"sys_user","id":"3b29e6aaa255448c94f2855def5f82fb","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false}],"applicability":{"type":"Applicability","mode":"script","value":"true"},"roles":["public"],"scope":"global","domain":"global","topic_type":"SETUP_TOPIC","channels":[],"dialog_acts_enabled":false,"id":"1acd645053130010cf8cddeeff7b12cd","name":"_PRVW__3617f72da7c73110292612d541584184","key_phrases":["Closing Conversation"],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":false,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"description":"Presents an ending message to the user when the conversation is done.","model_type":"nlu_keyword","modify_confirmation_enabled":false,"library":false,"csTopicId":"57cde45053130010cf8cddeeff7b1291","readOnly":true,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>1acd645053130010cf8cddeeff7b12cd</design_topic_id>
+        <graph>{
+  "graph_api_version": "1.0.46",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "972110b2590b4356b3a031d4f7cb9012": {
+          "id": "972110b2590b4356b3a031d4f7cb9012",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "166984db1c57489dab720923fe6859ee": {
+          "id": "166984db1c57489dab720923fe6859ee",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "8d50a162291448b890a6f6f3e02596a4": {
+          "id": "8d50a162291448b890a6f6f3e02596a4",
+          "stepType": "TextOutput",
+          "name": "Closing Message",
+          "value": [
+            {
+              "value": "(function execute() {\n    return vaSystem.getClosingMessage();\n})()\n",
+              "mode": "script"
+            }
+          ],
+          "applicability": {
+            "mode": "script",
+            "value": "(function execute() {\n    return gs.nil(vaContext.suppress_end_message) || vaContext.suppress_end_message != \"true\";\n})()"
+          },
+          "secure": false
+        },
+        "7d750541738445b797f5ca4d6554fdc8": {
+          "id": "7d750541738445b797f5ca4d6554fdc8",
+          "name": "Close Conversation",
+          "script": "(function execute() {\n    vaSystem.endConversation();\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "mode": "script",
+            "value": "(function execute() {\n     if (vaVars.didConnectToLiveAgent) {\n         return false;\n     }\n})()\n"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "415b1517f7814431b30e3c9584cd25ce",
+          "edgeType": "Edge",
+          "source": "8d50a162291448b890a6f6f3e02596a4",
+          "target": "7d750541738445b797f5ca4d6554fdc8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a80f24c74c7d4db08cb2255349a25f67",
+          "edgeType": "Edge",
+          "source": "7d750541738445b797f5ca4d6554fdc8",
+          "target": "166984db1c57489dab720923fe6859ee",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b6c897c2939c4efaafd75c3f1da9a693",
+          "edgeType": "Edge",
+          "source": "972110b2590b4356b3a031d4f7cb9012",
+          "target": "8d50a162291448b890a6f6f3e02596a4",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "3b29e6aaa255448c94f2855def5f82fb": {
+      "category": "vaInputs",
+      "id": "3b29e6aaa255448c94f2855def5f82fb",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    }
+  }
+}</graph>
+        <name>_PRVW__3617f72da7c73110292612d541584184</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-12-11 21:15:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f2177f2d47c73110bd8cf164336d4310</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_design_topic_f2177f2d47c73110bd8cf164336d4310</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-12-11 21:15:24</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>
